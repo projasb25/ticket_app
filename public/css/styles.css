@@ -3,14 +3,16 @@
 }
 a.dropdown-item { font-size:14px }
 .dropdown-menu { padding: 4px 0px }
-.bg-dark { background-color: #40514e !important }
+.bg-dark { background-color: #222831 !important; }
+.bg-light { background-color: #eeeeee !important;}
+.navbar-dark .navbar-nav .nav-link { color: #eeeeee; }
 .wrapper {
     display: flex;
 }
 #sidebar {
     min-width: 180px;
     max-width: 180px;
-    background: #005792;
+    background: #393e46;
     color: #fff;
     transition: all 0.3s;
     font-size: 14px;
@@ -79,8 +81,8 @@ a.dropdown-item { font-size:14px }
     color: white
 }
 #sidebar ul li.active>a,.sidebar a[aria-expanded="true"] {
-    color: #fff;
-    background: #448ef6;
+    color: #eeeeee;
+    background: #00adb5;
 }
 a[data-toggle="collapse"] {
     position: relative;
@@ -149,3 +151,10 @@ a[data-toggle="collapse"] {
         display: none;
     }
 }
+
+/* ---------------------------------------------------
+    MAIN
+----------------------------------------------------- */
+.table{ font-size:.8rem; }
+.table thead th{ padding: 10px 10px; }
+.table tbody td a { text-decoration: none; }

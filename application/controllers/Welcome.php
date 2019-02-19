@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('session');
-		$this->load->library('table');
+		$this->load->model('Tickets_model');		
 		if(!$this->session->userdata('email'))
 			redirect(base_url().'login');
 	}
@@ -14,7 +14,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$title['title'] = 'Inicio';
-		$data['users'] = $this->db->query('SELECT * FROM users')->result();
+		$title['sub_title'] = 'Cartelera';
+		$data['tickets'] = $this->Tickets_model->getTickets();
 		$this->load->view('layout/header',$title);
 		$this->load->view('main',$data);
 		$this->load->view('layout/footer');
