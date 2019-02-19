@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="<?php echo base_url();?>public/css/styles.css">
         <link href="<?php echo base_url();?>public/css/all.min.css" rel="stylesheet"> <!--load all styles -->
         <script src="<?php echo base_url();?>public/js/jquery-3.3.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <title><?php echo $title; ?></title>
     </head>
     <body>

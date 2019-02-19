@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo base_url();?>public/css/bootstrap.css">
     <link href="<?php echo base_url();?>public/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
     <title>Document</title>
 </head>
 <style>
     body{
         background-color:#e8f1f5;
+        font-family: 'Ubuntu', sans-serif;
     }
     .login-box{
         min-width: 350px;
@@ -54,30 +56,9 @@
         background-color:#00CE81;
         border-color:#00CE81;
     }
-    input[type=email]{
-        padding-left: 40px;
-    }
-    input[type=password]{
-        padding-left: 40px;
-    }
-    .input-wrapper{
-        position: relative;
-    }
-    .input-wrapper i{
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        padding: 8px 12px;
-        color:#aaa;
-        transition: .3s;
-    }
-    .input-wrapper input[type=email]:focus +i, .input-wrapper input[type=password]:focus + i{
-        color:dodgerBlue;
-    }
     .alert{
         font-size: 1rem;
     }
-
     .myForm {
         min-width: 500px;
         }
@@ -95,16 +76,20 @@
             </div>
             <div class="login-body">
                 <form action="<?php echo base_url(); ?>login/verification" method="POST">
-                    <div class="form-group input-wrapper">
-                        <input type="email" name ="email" id="email" placeholder="Email" class="form-control">
-                        <i class="fas fa-user "></i>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-user"></i></div>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email" name="email">
                     </div>
-                    <div class="form-group input-wrapper">
-                        <input type="password" name ="password" id="password" placeholder="Password" class="form-control">
-                        <i class="fas fa-unlock-alt"></i>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-success btn-lg" value="Log in" style="width:100%"/>
+                        <input type="submit" name="submit" class="btn btn-success btn-lg" value="Login" style="width:100%"/>
                     </div>
                 </form>
             <?php if (isset($error_msg)){  ?>

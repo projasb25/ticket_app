@@ -43,7 +43,7 @@ class Login extends CI_Controller {
 				redirect(base_url().'login');
 			}
 		} else {
-			$this->session->set_flashdata('error_msg', 'Usuario no existe');
+			$this->session->set_flashdata('error_msg', 'Usuario incorrecto');
 			redirect(base_url().'login');
 		}
 	}
