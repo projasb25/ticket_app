@@ -14,24 +14,18 @@
     <div class="container-fluid">
         <div class="login-box">
             <div class="login-header">
-                Ticket App
+                Enter your Email
             </div>
             <div class="login-body">
-                <form action="<?php echo base_url();?>login/verification" method="POST">
+                <form action="<?php echo base_url(); ?>login/forgot_password" method="POST">
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
                         <input type="email" class="form-control" placeholder="Email" name="email">
                     </div>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
-                        </div>
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                    </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-success btn-lg" value="Login" style="width:100%"/>
+                        <input type="submit" name="submit" class="btn btn-success btn-lg" value="Submit" style="width:100%"/>
                     </div>
                 </form>
             <?php if (isset($error_msg)){  ?>
@@ -39,9 +33,6 @@
                     <?php echo $error_msg; ?>
                 </div>
             <?php }#endif ?>
-            </div>
-            <div class="login-footer">
-                <a href="<?=base_url()?>forgot_password">Forgot password?</a>
             </div>
         </div>
     </div>
