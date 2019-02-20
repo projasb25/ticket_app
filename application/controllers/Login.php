@@ -18,7 +18,8 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Login';
-		$data['error_msg'] = $this->session->flashdata('error_msg');
+		$data['msg'] = $this->session->flashdata('msg');
+		$data['style'] = $this->session->flashdata('style');
 		$this->load->view('login/login',$data);
 	}
 
@@ -39,11 +40,19 @@ class Login extends CI_Controller {
 				$this->session->set_userdata($new_user);
 				redirect(base_url());
 			} else {
-				$this->session->set_flashdata('error_msg', 'Contraseña incorrecta');
+				$msg = array(
+					'msg' => 'Wrong password',
+					'style' => 'danger'
+				);
+				$this->session->set_flashdata($msg);
 				redirect(base_url().'login');
 			}
 		} else {
-			$this->session->set_flashdata('error_msg', 'Usuario incorrecto');
+			$msg = array(
+				'msg' => 'Username invalid',
+				'style' => 'danger'
+			);
+			$this->session->set_flashdata($msg);
 			redirect(base_url().'login');
 		}
 	}
@@ -72,8 +81,7 @@ class Login extends CI_Controller {
 		$this->email->set_mailtype("html");
 		$this->email->set_newline("\r\n");
 		
-		$htmlContent = '<h1>Sending email via SMTP server</h1>';
-		$htmlContent .= '<p>This email has sent via SMTP server from CodeIgniter application.</p>';
+		$htmlContent = '<h1>Forgot password</h1>';
 		$htmlContent .= '<p>Please click here to change your password <a href="'.base_url().'login/confirm_forgot_password/'.$output['token'].'">here</a></p>';
 		
 		$this->email->to('projas@bitinka.com');
@@ -88,7 +96,9 @@ class Login extends CI_Controller {
 
 	public function confirm_forgot_password($token){
 		$decodedToken = AUTHORIZATION::validateTimestamp($token);
-		var_dump($decodedToken);
+		if($decodedToken){
+			var_dump($decodedToken); }
+		else { echo 'token expirado'; }
 	}
 	
 }

@@ -31,14 +31,19 @@
                         } /* endswitch */ ?>
                     <tr>
                         <th scope="row"><?=$ticket->id_ticket;?></th>
-                        <td><span class="badge badge-<?=$status_class?>" data-toggle="tooltip" data-placement="top" title="Progress" style="cursor: default"><?=$ticket->status;?></span></td>
-                        <td><a href="#" data-toggle="modal" data-target="#exampleModalCenter"><?=$ticket->subject;?></a></td>
+                        <td><span class="badge badge-<?=$status_class?>" data-toggle="tooltip" data-placement="top" title="<?=$ticket->status_name;?>" style="cursor: default"><?=$ticket->status;?></span></td>
+                        <td><a href="#" ><?=$ticket->subject;?></a></td>
                         <td><?=$ticket->created_by;?></td>
                         <td><?=$ticket->category;?></td>
                         <td><?=$ticket->assigned_to;?></td>
                         <td><?=$ticket->priority;?></td>
                         <td><?=$ticket->date_updated;?></td>
-                        <td><a href="<?=base_url().'tickets/edit/'.$ticket->id_ticket;?>">Edit</a></td>
+                        <td>
+                          <?php if($this->session->userdata('permissions') == 1) { ?>
+                              <a href="<?=base_url().'tickets/edit/'.$ticket->id_ticket;?>" class="mr-2"><i class="fas fa-edit"></i></a>
+                          <?php }/* endif */ ?>
+                            <a href="#" style="font-size:1rem;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-info-circle"></i></a>
+                        </td>
                     </tr>
     <?php       }/* endforeach */
             }/* endif */ 

@@ -34,9 +34,9 @@
                         <input type="submit" name="submit" class="btn btn-success btn-lg" value="Login" style="width:100%"/>
                     </div>
                 </form>
-            <?php if (isset($error_msg)){  ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $error_msg; ?>
+            <?php if (isset($msg)){  ?>
+                <div class="alert alert-<?=$style?>" role="alert">
+                    <?php echo $msg; ?>
                 </div>
             <?php }#endif ?>
             </div>

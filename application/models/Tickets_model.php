@@ -8,7 +8,9 @@ class Tickets_model extends CI_Model{
     }
 
     function getTickets(){
-        $query = $this->db->query('SELECT * from tickets ORDER BY status DESC');
+        $query = $this->db->query('SELECT tk.*,sts.status_name from tickets tk
+                                JOIN status sts on tk.status = sts.id_status
+                                ORDER BY status DESC');
         if($query->num_rows()>0)
             return $query->result();
         else 
