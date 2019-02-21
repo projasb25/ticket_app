@@ -12,9 +12,18 @@
         <title><?php echo $title; ?></title>
     </head>
     <body>
+        <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-0 shadow flex-md-nowrap"> -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-0 shadow flex-md-nowrap">
-            <a class="navbar-brand col-2 col-sm-2 mr-0" href="#">Ticket Admin</a>
-            <!-- <a class="navbar-brand mr-0 active" href="#">TA</a> -->
+            <a class="navbar-brand col-md-2 mr-0" href="#">
+                <span class="long-brand">Ticket Admin</span>
+                <span class="short-brand">
+                    <div class="textA">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                    </div>
+                </span>
+            </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,7 +39,9 @@
         </nav><!-- navbar -->
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-md-2 d-none d-md-block sidebar">
+
+                <!-- <nav class="col-md-2 d-none d-md-block sidebar"> -->
+                <nav class="col-md-2 sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item active">
@@ -75,8 +86,11 @@
                         </ul>
                     </div>
                 </nav><!-- sidebar -->
-                <div class="main col-md-11 col-lg-10 ml-sm-auto px-4">
+
+                <!-- <div class="main col-md-11 col-lg-10 ml-sm-auto px-4"> -->
+                <div class="main">
                     <div class="d-flex justify-content-between flex-wrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h4">Main</h1>
                     </div>
-                
+                        
+                    
