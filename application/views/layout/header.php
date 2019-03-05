@@ -18,9 +18,11 @@
                 <span class="long-brand">Ticket Admin</span>
                 <span class="short-brand">
                     <div class="textA">
-                       <span></span>
-                       <span></span>
-                       <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </span>
             </a>
@@ -44,24 +46,24 @@
                 <nav class="col-md-2 sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
-                            <li class="nav-item active">
-                                <a href="#homeSubmenu" data-toggle="collapse">
+                            <li class="nav-item <?=($menu=='cartelera')? 'active': false;?>">
+                                <a href="<?=base_url()?>">
                                     <i class="fas fa-calendar-alt"></i>
-                                    Inicio
+                                    Cartelera
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item <?=($menu=='tickets')? 'active':null;?>">
                                 <a href="#ticketSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                                     <i class="fas fa-ticket-alt"></i>
                                     Tickets
                                 </a>
                                 <ul class="collapse list-unstyled" id="ticketSubmenu">
                                     <li>
-                                        <a href="#"> <i class="fas fa-plus"></i> Crear Ticket</a>
+                                        <a href="<?=base_url()?>tickets/new"> <i class="fas fa-plus"></i> Crear Ticket</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item <?=($menu=='consultas')? 'active':null;?>">
                                 <a href="#consultasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                                     <i class="fas fa-search"></i>
                                     Consultas
@@ -76,7 +78,7 @@
                                 </ul>
                             </li>
                             <?php if($this->session->userdata('permissions') == 1){ ?>
-                                <li class="nav-item">
+                                <li class="nav-item <?=($menu=='admin')? 'active':null;?>">
                                     <a href="#">
                                         <i class="fas fa-user-cog"></i>
                                         Admin
@@ -90,7 +92,7 @@
                 <!-- <div class="main col-md-11 col-lg-10 ml-sm-auto px-4"> -->
                 <div class="main">
                     <div class="d-flex justify-content-between flex-wrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h4">Main</h1>
+                        <h1 class="h4"><?=$sub_title?></h1>
                     </div>
                         
                     

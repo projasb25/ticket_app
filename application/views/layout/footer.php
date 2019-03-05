@@ -3,15 +3,22 @@
         </div><!-- /container-fluid -->
         <script src="<?php echo base_url();?>public/js/bootstrap.min.js"></script>
         <script type="text/javascript">
-            // $(document).ready(function () {
-            //     $('#sidebarCollapse').on('click', function () {
-            //         $('#sidebar').toggleClass('active');
-            //     });
-            //     responsive_design();
-            // });
-            // $(window).on('resize', function() {
-            //     responsive_design();
-            // })
+            
+            $(document).on("click",".hamburguer", function () {
+                $('.sidebar').toggleClass('show');
+            });
+            $(document).ready(function () {
+                if($(window).width() < 768) {
+                    $(".short-brand").addClass("hamburguer");
+                }
+            });
+            $(window).on('resize', function() {
+                if($(window).width() < 768) {
+                    $(".short-brand").addClass("hamburguer");
+                }else{
+                    $(".short-brand").removeClass("hamburguer");
+                }
+            });
             // function responsive_design(){
             //     if($(window).width() < 992) {
             //         $(".sidebar").addClass("active");

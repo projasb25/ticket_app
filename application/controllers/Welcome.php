@@ -13,10 +13,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$title['title'] = 'Inicio';
-		$title['sub_title'] = 'Cartelera';
+		$data['title'] = 'Inicio';
+		$data['menu'] = 'cartelera';
+		$data['sub_title'] = 'Cartelera';
 		$data['tickets'] = $this->Tickets_model->getTickets();
-		$this->load->view('layout/header',$title);
+		$this->load->view('layout/header',$data);
 		$this->load->view('main',$data);
 		$this->load->view('layout/footer');
 	}
